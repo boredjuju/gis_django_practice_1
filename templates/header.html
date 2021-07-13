@@ -5,9 +5,21 @@
     </div>
     <div class="bored_header_button">
         <span>nav1</span>
-        <span>nav2</span>
-        <span>nav3</span>
-        <span>nav4</span>
+        <span>
+            <a href="{% url 'accountapp:logout' %}">
+                LogOut
+            </a>
+        </span>
+        <span>
+            <a href="{% url 'accountapp:login' %}">
+                LogIn
+            </a>
+        </span>
+        <span>
+            <a href="{% url 'accountapp:create' %}">
+                SignUp
+            </a>
+        </span>
     </div>
 
 
