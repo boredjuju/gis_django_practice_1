@@ -5,21 +5,28 @@
     </div>
     <div class="bored_header_button">
         <span>nav1</span>
-        <span>
-            <a href="{% url 'accountapp:logout' %}">
-                LogOut
-            </a>
+        <span>nav2</span>
+
+        {% if not user.is_authenticated %}
+            <span>
+                <a href="{% url 'accountapp:login' %}">
+                    LogIn
+                </a>
+            </span>
+            <span>
+                <a href="{% url 'accountapp:create' %}">
+                    SignUp
+                </a>
+            </span>
+
+        {% else %}
+            <span>
+                <a href="{% url 'accountapp:logout' %}">
+                    LogOut
+                </a>
         </span>
-        <span>
-            <a href="{% url 'accountapp:login' %}">
-                LogIn
-            </a>
-        </span>
-        <span>
-            <a href="{% url 'accountapp:create' %}">
-                SignUp
-            </a>
-        </span>
+        {% endif %}
+
     </div>
 
 
